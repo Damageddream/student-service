@@ -9,6 +9,22 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seqIdGen")
     private Long id;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Status status;
+    public enum Status{
+        ACTIVE,
+        INACTIVE
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
     @Column(nullable = false)
     private String firstName;
     private String lastName;

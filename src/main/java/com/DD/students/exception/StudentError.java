@@ -1,7 +1,9 @@
 package com.DD.students.exception;
 
 public enum StudentError {
-    STUDENT_NOT_FOUND("Student does not exists");
+    STUDENT_NOT_FOUND("Student does not exists"),
+    STUDENT_IS_NOT_ACTIVE("Student is not active"),
+    STUDENT_EMAIL_ALREADY_EXISTS("Student email already exists");
     private String message;
 
     StudentError(String message) {
@@ -12,7 +14,4 @@ public enum StudentError {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
 }
